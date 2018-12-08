@@ -51,10 +51,10 @@ if ($type == "config") {
 		$config_file = "$mod_path/includes/dnschef-master/fruitydns.conf";
         
 		$exec = "$bin_echo '$newdata' | base64 --decode > $config_file";
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
         
         $exec = "$bin_dos2unix $config_file";
-        exec_fruitywifi($exec);
+        exec_blackbulb($exec);
     }
 
     header('Location: ../index.php?tab=2');

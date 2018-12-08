@@ -9,7 +9,7 @@
 +from flask import Flask
 +import json
 +
-+CONFIG_FILE = "/usr/share/fruitywifi/www/modules/fruitydns/includes/dnschef-master/fruitydns.conf"
++CONFIG_FILE = "/usr/share/blackbulb/www/modules/fruitydns/includes/dnschef-master/fruitydns.conf"
 +#config = ConfigObj(CONFIG_FILE)
 +
 +TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -251,7 +251,7 @@
 +    # ------------------------------------
 +    # START API [xtr4nge]
 +    # ------------------------------------
-+    print "[*] FruityDNS Version 1.0 by @xtr4nge (http://www.fruitywifi.com)"
++    print "[*] FruityDNS Version 1.0 by @xtr4nge (http://www.blackbulb.com)"
 +    print "[*] Starting FruityDNS [API]"
 +    a = threading.Thread(name="API", target=startFlask)
 +    a.setDaemon(True)

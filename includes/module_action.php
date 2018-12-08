@@ -45,10 +45,10 @@ if($service != "") {
     if ($action == "start") {
         // COPY LOG
 		$exec = "$bin_mv $mod_logs $mod_logs_history/".gmdate("Ymd-H-i-s").".log";
-		exec_fruitywifi($exec);
+		exec_blackbulb($exec);
 		
 		$exec = "./dnschef-master/dnschef.py --nameserver=8.8.8.8 --logfile=$mod_logs -i $io_in_ip > /dev/null &";
-		exec_fruitywifi($exec);
+		exec_blackbulb($exec);
 		
 		$wait = 2;
 	
@@ -58,26 +58,26 @@ if($service != "") {
 		exec($exec,$output);
 		
 		$exec = "kill " . $output[0];
-		exec_fruitywifi($exec);
+		exec_blackbulb($exec);
     }
 }
 
 if($mod_service == "dnsspoof") {
     $exec = "$bin_sed -i 's/mod_dnsspoof=.*/mod_dnsspoof=\\\"".$mod_action."\\\";/g' ../_info_.php";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 	
 	if ($mod_action == "1") $status = "on"; else $status = "off";
 	$exec = "$bin_sed -i 's/^dnsspoof =.*/dnsspoof = ".$status."/g' dnschef-master/fruitydns.conf";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 }
 
 if ($install == "install_$mod_name") {
 
     $exec = "chmod 755 install.sh";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
 
     $exec = "$bin_sudo ./install.sh > $log_path/install.txt &";
-    exec_fruitywifi($exec);
+    exec_blackbulb($exec);
     
     header('Location: ../../install.php?module='.$mod_name);
     exit;
