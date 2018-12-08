@@ -24,7 +24,7 @@ include "../../login_check.php";
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>FruityWiFi</title>
+<title>BlackBlulb</title>
 <script src="../js/jquery.js"></script>
 <script src="../js/jquery-ui.js"></script>
 

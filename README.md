@@ -1,7 +1,7 @@
 module_fruitydns
 ===============
 
-FruityWiFi fruitydns module.
+BlackBlulb fruitydns module.
 
 
 v1.1
